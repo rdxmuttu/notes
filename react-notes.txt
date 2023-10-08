@@ -1,0 +1,143 @@
+What is React?
+----------------
+- A javascript library for building Single Page Application
+- Component-Oriented
+- Developed and Maintained by Meta
+- React native to build IOS and Android apps
+
+Alternatives : Angular, Vue JS, Flutter
+
+
+Angular vs React
+------------------
+Angular is a Framework while React is just a library
+Angular consists of almost everything we need to build an application but React focuses only on how to create components and work with components, all the remaining things can be added separately as required.
+
+React is JavaScript based(we can use TypeScript as well)
+Angular is based on typescript
+
+
+
+
+Dev Setup:
+----------
+- Install node js
+- Install create-react-app (optional)
+ 	- npm install create-react-app
+
+
+Creating our first React Application
+------------------------------------
+npx create-react-app [app-name]
+
+npx create-react-app hello-world
+
+create-react-app hello-world
+
+
+React Styling with Bootstrap
+----------------------------
+Add bootstrap : npm install bootstrap
+
+Import bootstrap module on index.js
+
+ - import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+React Render
+-------------
+
+Conditional Rendering
+---------------------
+if-else
+ternary operator
+short-circuit operator
+
+
+
+
+Online Shopping App
+-------------------
+1. Add Bootstrap
+2. Create components
+-components
+ -home
+  -HomePage
+ -header
+  -HeaderPage
+  -NavBarPage
+ -footer
+  -FooterPage
+ -error
+  -ErrorPage
+ -product
+  -AddProductPage
+  -ViewProductPage
+ -cart
+  -AddCartItemsPage
+  -ViewCartPage
+ -order
+  -PlaceOrderPage
+  -CancelOrderPage
+  -ViewOrdersPage
+  
+
+
+React Component Lifecycle
+-------------------------
+Mounting
+Update
+Un-mounting
+Error-Handling
+
+
+Hooks
+----------
+Alternative to React Lifecycle Methods and other React Class Components concepts such as state for Functional Components
+
+
+useState()
+useEffect()
+useContext()
+useReducer()
+
+
+useEffect Hook
+----------------
+
+useContext
+------------
+
+Step 1 : Create a context
+
+export const UserContext = React.createContext('');
+
+Step 2: Provide the context to child components
+
+<UserContext.Provider value='Harsh'>
+	.... components
+</UserContext.Provider>
+
+Step 3 : Fetching the context value using useContext hook
+
+let username = useContext(UserContext);
+
+
+ProductContext
+list
+functionToUpdateProducts
+
+CartContext
+list
+functionToUpdateCart
+
+
+
+
+
+
+
+
+
+
+

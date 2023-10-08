@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+   
+    <h2 id="myclock"></h2>
+
+</body>
+
+<!-- Internal JS -->
+<script>
+    document.getElementById("myclock").innerHTML=new Date().toLocaleTimeString()
+    setInterval(()=>{
+        document.getElementById("myclock").innerHTML=new Date().toLocaleTimeString()
+    },1000)
+</script>
+
+
+
+</html>
