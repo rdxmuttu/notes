@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        #main{
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+        #para1{
+            text-align: center;
+            background-color: black;
+            color: white;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            margin-left: 0px;
+            margin-right: 0px;
+            padding: 25px;
+            font-size: 1.5em;
+            line-height: 40px;
+            border-radius: 20px;
+        }
+        #btn{
+            border: 0px;
+            outline: 0px;
+            background-color: rgb(47,79,79);
+            color: white;
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor:pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <p id="para1">
+            This is a problem where we will learn how to switch dark mode in awebsite using HTML, CSS and JavaScript.
+        </p>
+        <button id="btn">Switch to Dark Mode</button>
+    </div>
+</body>
+<script>
+    const body= document.body;
+    const para1 = document.getElementById('para1');
+    const btn = document.getElementById('btn');
+
+    let darkMode = false;
+
+    function toggleMode(){
+        darkMode = !darkMode;
+
+        body.style.backgroundColor =darkMode? 'black' : '';
+        
+        para1.style.backgroundColor = darkMode? 'white':'';
+        para1.style.color = darkMode? 'black':'';
+
+        btn.style.backgroundColor = darkMode? '#dcdcdc':'';
+        btn.style.color = darkMode? 'black':'';
+        btn.textContent = darkMode? 'Switch to Light Mode': 'Switch to Dark Mode';
+
+        if(!darkMode){
+            para1.style.backgroundColor = '';
+            para1.style.color = '';
+
+            btn.style.backgroundColor = '';
+            btn.style.color ='';
+            btn.textContent = 'Switch to Dark Mode'; 
+        }
+    }
+     btn.addEventListener('click',toggleMode);
+</script>
+</html>

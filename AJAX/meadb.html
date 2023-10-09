@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="username" placeholder="enter required meal">
+        <button onclick="searchMeal()">search</button>
+    </div>
+    <div>
+        <p>Origin :<span id="origin"></span></p>
+        <p>Meal Name : <span id="mealName"></span></p>
+        <p>Cheese : <span id="cheese"></span></p>
+        <p>Flavour : <span id="flavour"></span></p>
+    </div>
+</body>
+<script>
+    const searchMeal = () => {
+        let username = document.getElementById('username').value;
+        fetchUser(username).then(
+            user => {
+                console.log(user.meals[0])
+                //    console.log(user.filter(u=>u).forEach(u=>console.log(u)))
+                document.getElementById("origin").innerHTML = user.meals[0].strArea;
+                document.getElementById("mealName").innerHTML = user.meals[0].strMeal;
+                document.getElementById("cheese").innerHTML = user.meals[0].strIngredient8;
+                document.getElementById("flavour").innerHTML = user.meals[0].strIngredient4;
+            }
+        ).catch((error) => {
+            console.error(error)
+        })
+    }
+</script>
+<script>
+    const fetchUser = async (food) => {
+        let response = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=' + food);
+        if (response.status == 200) {
+            let data = await response.json();
+            return data;
+        }
+        else {
+            return { status: response.status, error: response.statusText }
+        }
+    }
+</script>
+</html>

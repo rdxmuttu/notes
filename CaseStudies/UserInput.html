@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserData</title>
+    <style>
+        #form {
+            display: flex;
+            flex-direction: column;
+            width: 450px;
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: rgb(255, 248, 220);
+            margin: auto;
+            margin-top: 260px;
+            padding: 18px;
+        }
+
+        #label1,
+        #label2,
+        #input1 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 10px;
+        }
+
+        #input2 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 10px;
+            margin-bottom: 20px;
+        }
+
+        #btn {
+            background-color: rgb(0, 0, 255);
+            color: rgb(255, 255, 255);
+            width: 90px;
+            margin: auto;
+            padding: 8px;
+            font-style: italic;
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+
+<body>
+    <form onsubmit="return validateForm()" id=form>
+        <label id="label1">Name</label><br>
+        <input type="text" id="input1" placeholder="John">
+        <label id="label2">Password</label><br>
+        <input type="password" id="input2">
+        <button id="btn">check</button>
+
+    </form>
+</body>
+<script>
+    function validateForm() {
+        var name = document.getElementById("input1").value;
+        var pswrd = document.getElementById("input2").value;
+        if (!name || name.trim() == '') {
+            alert("Name can't be empty!");
+        }
+       else if (pswrd.length < 6 || pswrd.trim() == '') {
+            alert("Password has atleast 6 letters!");
+        }
+    }
+</script>
+
+</html>
